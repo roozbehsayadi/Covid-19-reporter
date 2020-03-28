@@ -1,0 +1,1 @@
+This is a program written with Node.js. In the times of Covid-19, this program is designed to collect reports from cases of diagnotion and use the information to show how many cases are reported in a specific area. 
