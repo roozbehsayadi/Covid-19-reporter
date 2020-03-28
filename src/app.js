@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const repository = require('./repository/repository');
 
 const port = process.env.PORT;
 
