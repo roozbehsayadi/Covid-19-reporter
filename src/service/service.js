@@ -1,5 +1,6 @@
 var repository = require('./../repository/repository');
 var inside = require('point-in-polygon');
+const logger = require('./../logger/logger')
 
 const checkIfPointInsidePolygon = (point, polygon) => {
 	if (inside(point, polygon)){
@@ -9,6 +10,7 @@ const checkIfPointInsidePolygon = (point, polygon) => {
 };
 
 const getSurroundingPolygons = (point) => {
+	logger.log(`Finding surrounding polygons for (${point})`);
 	let returnValue = [];
 	repository.getPolygons().forEach(element => {
 		if (checkIfPointInsidePolygon(point, element.geometry.coordinates[0])){
