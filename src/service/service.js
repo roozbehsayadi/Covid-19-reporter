@@ -18,11 +18,11 @@ const getSurroundingPolygons = (point) => {
 	return returnValue; 
 };
 
-const addPolyogon = polygon => {
+const addPolygon = polygon => {
 	repository.addPolygon(polygon);
 };
 
 module.exports = {
-	addPolygon: this.addPolygon,
+	addPolygon: addPolygon,
 	getSurroundingPolygons: getSurroundingPolygons
 };

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const service = require('./../service/service')
+const repository = require('./../repository/repository')
 
 router.get('/testpoint', function(req, res) {
 	const point = [req.query.long, req.query.lat];
@@ -9,7 +10,9 @@ router.get('/testpoint', function(req, res) {
 })
 
 router.put('/addpolygon', function(req, res){
-	res.send('in addpolygon functoin');
+	const polygon = req.body;
+	service.addPolygon(polygon);
+	res.send("polygon added successfuly");
 })
 
 module.exports = router;

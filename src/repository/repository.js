@@ -10,7 +10,7 @@ const getPolygons = () => {
 };
 
 const addPolygon = (polygon) => {
-	polygonsGISData.features.push(polyton);
+	polygonsGISData.features.push(polygon);
 };
 
 module.exports = {
