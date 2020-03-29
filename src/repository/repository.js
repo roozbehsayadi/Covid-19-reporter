@@ -2,7 +2,7 @@ const fs = require("fs");
 
 let polygonsGISData = JSON.parse(fs.readFileSync('resources/repository.json'));
 // polygonsGISData.features.forEach(element => {
-// 	console.log(element.properties.name);
+// 	console.log(element.geometry.coordinates[0]);
 // });
 
 const getPolygons = () => {
