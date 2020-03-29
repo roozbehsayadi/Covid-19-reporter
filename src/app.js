@@ -16,6 +16,11 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use('/gis', router);
 
+app.use(function(req, res, next) {
+	logger.log(`Route ${req.url} not found.`);
+	return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
+  });
+
 app.listen(port, () => logger.log(`Server listening on port ${port}!`));
 
 process.on('SIGINT', function() {

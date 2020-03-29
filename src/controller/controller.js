@@ -11,12 +11,12 @@ router.get('/testpoint', [
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
 		logger.log(`GET request had some issues. errors: ${JSON.stringify(errors.array())}.`);
-		return res.status(422).json({ errors: errors.array() });
+		return res.status(400).json({ errors: errors.array() });
 	}
 	logger.log('GET request for /testpoint');
 	const point = [req.query.long, req.query.lat];
 	const answer = service.getSurroundingPolygons(point);
-	res.send(answer);
+	res.status(200).send(answer);
 
 });
 
@@ -24,7 +24,7 @@ router.put('/addpolygon', function(req, res){
 	logger.log('PUT request for /addpolygon');
 	const polygon = req.body;
 	service.addPolygon(polygon);
-	res.send("polygon added successfuly");
+	res.status(200).send("polygon added successfuly");
 })
 
 module.exports = router;
