@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT;
+const expressValidator = require('express-validator');
 
 const winston = require('winston');
 
@@ -12,6 +13,7 @@ logger.log(`Server started at ${(new Date()).toJSON().slice(0, 19).replace(/[-T]
 const router = require('./controller/controller');
 
 app.use(bodyParser.json());
+app.use(express.json());
 app.use('/gis', router);
 
 app.listen(port, () => logger.log(`Server listening on port ${port}!`));
