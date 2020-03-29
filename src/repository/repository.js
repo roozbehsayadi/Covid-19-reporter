@@ -1,6 +1,9 @@
 const fs = require("fs");
 
 let polygonsGISData = JSON.parse(fs.readFileSync('resources/repository.json'));
+// polygonsGISData.features.forEach(element => {
+// 	console.log(element.properties.name);
+// });
 
 const getPolygons = () => {
 	return polygonsGISData.features;

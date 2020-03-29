@@ -1,8 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const service = require('./../service/service')
 
 router.get('/testpoint', function(req, res) {
-	res.send('in testpoint function');
+	const point = [req.query.long, req.query.lat];
+	const answer = service.getSurroundingPolygons(point);
+	res.send(answer);
 })
 
 router.put('/addpolygon', function(req, res){
