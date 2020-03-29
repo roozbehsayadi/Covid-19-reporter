@@ -1,6 +1,8 @@
 # Covid-19 Reporter
 In these times, the whole world is struggling with Covid-19 virus problems, such as quarantine, several business closures and...
+
 I wrote a Node.js webserver to help people know which areas are mostly affected by this disease, to help them prevent dangerous areas (of course the safest place to stay is home, but anyway...).
+
 In this program, you can do two things:
 1. You can see the affected areas around the world. It is an open-source program so this information is submitted by people around the world.
 2. You can submit your very own information.
@@ -15,14 +17,18 @@ node --version
 ```
 If you don't have this package, just follow the instructions from [Node.js' official website](https://nodejs.org/en/download/).
 
-Once you set up node, clone this project into your system. Open the project's folder from Terminal. You need to set up an environment file. Do it by typing ```echo 'PORT = 3000' >.env```. Then you can install the Node.js requirements by typing ```npm install```. Wait for the process to finish. Now the program is ready and can be started by ```npm start```.  
+Once you set up node, clone this project into your system. Open the project's folder from Terminal. You need to set up an environment file. Do it by typing ```echo 'PORT = 3000' >.env```.
+
+Then you can install the Node.js requirements by typing ```npm install```. Wait for the process to finish. 
+
+The program is ready and can be started by ```npm start```.  
 
 Now your web server is ready and waiting for requests. Let's talk about how you can use it. 
 
 ## Types of Requests
 
 1. **GET request**
-You can send a GET request to */gis/testpoint*. Your request should have two parameters: *long* and *lat* (which are obviously longitude and latitude of your considered point). In response, you will get a JSON object with this format:
+You can send a GET request to */gis/testpoint*. Your request should have two parameters: *long* and *lat* (which are longitude and latitude of your considered point). In response, you will get a JSON object with this format:
 ```JSON
 {
     polygons : [
@@ -30,8 +36,10 @@ You can send a GET request to */gis/testpoint*. Your request should have two par
 }
 ```
 which the polygons array will have the names of the areas that your point in inside them. 
+
+
 2. **PUT request**
-You can send a PUT request to */gis/addpolygon*. Your request should have a *GeoJSON Feature* with *Polygon* type in their body. Feel free to check their [official website](https://geojson.org/) for more details.
+You can send a PUT request to */gis/addpolygon*. Your request should have a *GeoJSON Feature* with *Polygon* type in its body. Feel free to check their [official website](https://geojson.org/) for more details.
 
 > If you are wondering how you can send these requests, check out [Postman](https://www.postman.com/), a program designed for sending different types of requests to everywhere you want.
 
