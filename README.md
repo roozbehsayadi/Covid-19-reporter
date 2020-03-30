@@ -11,6 +11,8 @@ So let's see how you can set this program up.
 
 ## Installing requirements
 
+(If you don't want to install it on your system, skip this part and go to *API* section.)
+
 You have to install Node.js on your system. You can check if you already have it by typing this command:
 ```
 node --version
@@ -42,6 +44,10 @@ which the polygons array will have the names of the areas that your point in ins
 You can send a PUT request to */gis/addpolygon*. Your request should have a *GeoJSON Feature* with *Polygon* type in its body. Feel free to check their [official website](https://geojson.org/) for more details.
 
 > If you are wondering how you can send these requests, check out [Postman](https://www.postman.com/), a program designed for sending different types of requests to everywhere you want.
+
+## API
+
+You can also send your requests to my [API](https://covid-19-reporter.herokuapp.com/). 
 
 ## Implementation Details
 
