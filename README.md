@@ -41,7 +41,7 @@ which the polygons array will have the names of the areas that your point in ins
 
 
 2. **PUT request**
-You can send a PUT request to */gis/addpolygon*. Your request should have a *GeoJSON Feature* with *Polygon* type in its body. Feel free to check their [official website](https://geojson.org/) for more details.
+You can send a PUT request to */gis/addpolygon*. Your request should have a *GeoJSON Feature* with *Polygon* type in its body. Feel free to check their [official website](https://geojson.org/) for more details. Response has the whole database in its body. 
 
 > If you are wondering how you can send these requests, check out [Postman](https://www.postman.com/), a program designed for sending different types of requests to everywhere you want.
 
