@@ -23,5 +23,6 @@ const addPolygon = (polygon) => {
 
 module.exports = {
 	getPolygons: getPolygons,
-	addPolygon: addPolygon
+	addPolygon: addPolygon,
+	polygonsGISData: polygonsGISData
 };

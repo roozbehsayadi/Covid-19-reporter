@@ -4,6 +4,7 @@ const service = require('./../service/service');
 const logger = require('./../logger/logger');
 const { check, validationResult } = require('express-validator');
 var GeoValidation = require('geojson-validation');
+const repository = require('./../repository/repository')
 
 router.get('/testpoint', [
 	check('long').exists().isFloat(),
@@ -30,7 +31,7 @@ router.put('/addpolygon', function(req, res){
 	}
 	service.addPolygon(polygon);
 	logger.log("Polygon added to database successfuly");
-	res.status(200).send("polygon added successfuly");
+	res.status(200).send(JSON.stringify(repository.polygonsGISData, null, '\t'));
 })
 
 module.exports = router;
