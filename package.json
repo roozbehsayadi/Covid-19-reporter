@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r dotenv/config src/app.js",
-    "dev": "nodemon -r dotenv/config src/app.js"
+    "start": "node -r dotenv/config src/app.js"
   },
   "author": "Roozbeh Sayadi",
   "license": "ISC",
@@ -19,7 +18,5 @@
     "point-in-polygon": "^1.0.1",
     "winston": "^3.2.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+  "devDependencies": {}
 }
